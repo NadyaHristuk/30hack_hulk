@@ -13,11 +13,11 @@ class Header extends Component {
     render () {
         const { value } = this.state;
         return (
-        <div >
-        <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
+        <div className = "headerWrapper">
+        <Tabs classes={{root: 'tabsHeader'}} value={value} onChange={this.handleChange}>
+            <Tab label="Проекты" />
+            <Tab label="Вопросы и ответы" />
+            <Tab label="FAQ" />
           </Tabs>
           {value === 0 && <h1>Item One</h1>}
           {value === 1 && <h1>Item Two</h1>}

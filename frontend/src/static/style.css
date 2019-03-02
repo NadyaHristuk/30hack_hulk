@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.tabsHeader{
+    width: 100%;
+    background-color: #1a1758;
+    color: #fff;
+}
