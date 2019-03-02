@@ -59,7 +59,7 @@ const FilterPanel = (props) => {
 		        					<FormControlLabel 
 		        						key={shortid.generate()}
 		        						control={
-		        							<Checkbox  
+		        							<Checkbox  classes={{root:'checkbox-color'}}
 		        								checked={checkedCategories.includes(category)}
 		        								onChange={(e) => {
 		        									e.stopPropagation();

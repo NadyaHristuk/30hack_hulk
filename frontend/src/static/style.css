@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .App .wrapper {
@@ -68,11 +69,17 @@
     margin-bottom: 10px;
 }
 
+.App .main-content .wrapper-project-card p span{
+    margin-right: 5px;
+}
 .App .main-content .wrapper-project-card h6{
     font-size: 14px;
     margin-bottom: 10px;
 }
 
+.App .main-content .wrapper-project-card h6 span{
+    margin-right: 5px;
+}
 .App .main-content .wrapper-project-card .button-about-project{
     background-color: #1a1758;
     color: #fff;
@@ -90,4 +97,8 @@
 
 .App .filters .checkbox-wrapper{
     flex-direction: column;
+}
+
+.App .filters .checkbox-wrapper .checkbox-color svg{
+    color: #1a1758;
 }
