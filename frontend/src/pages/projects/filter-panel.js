@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import shortid from 'shortid';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -18,33 +18,39 @@ const filters = [
 ];
 
 
-export default class FilterPanel extends Component {
-	render() {
-		return (
-			<div>
-				{
-					filters.map(filter => 
-						<ExpansionPanel key={shortid.generate()} >
-							<ExpansionPanelSummary>
-								<p>{filter.name}</p>
-							</ExpansionPanelSummary>
-			        		<ExpansionPanelDetails>
-			        			{
-			        				filter.categories.map(category => 
-			        					<FormControlLabel 
-			        						key={shortid.generate()}
-			        						control={
-			        							<Checkbox  />	
-			        						}
-			        						label={category} 
-		        						/>
-			        				)
-			        			}
-			        		</ExpansionPanelDetails>
-		  				</ExpansionPanel>
-					)
-				}
-			</div>
-		);
-	}
+const FilterPanel = (props) => {
+	const { checkedCategories, toggleCheckedCategories } = props;
+
+	return (
+		<div>
+			{
+				filters.map(filter => 
+					<ExpansionPanel key={shortid.generate()} >
+						<ExpansionPanelSummary>
+							<p>{filter.name}</p>
+						</ExpansionPanelSummary>
+		        		<ExpansionPanelDetails>
+		        			{
+		        				filter.categories.map(category => 
+		        					<FormControlLabel 
+		        						key={shortid.generate()}
+		        						control={
+		        							<Checkbox  
+		        								checked={checkedCategories.includes(category)}
+		        								onChange={(e) => toggleCheckedCategories(category)}
+		        								value={category}
+		        							/>	
+		        						}
+		        						label={category} 
+	        						/>
+		        				)
+		        			}
+		        		</ExpansionPanelDetails>
+	  				</ExpansionPanel>
+				)
+			}
+		</div>
+	);
 }
+
+export default FilterPanel;
