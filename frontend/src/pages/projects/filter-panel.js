@@ -61,7 +61,10 @@ const FilterPanel = (props) => {
 		        						control={
 		        							<Checkbox  
 		        								checked={checkedCategories.includes(category)}
-		        								onChange={(e) => toggleCheckedCategories(category)}
+		        								onChange={(e) => {
+		        									e.stopPropagation();
+		        									toggleCheckedCategories(category, e);
+		        								}}
 		        								value={category}
 		        							/>	
 		        						}
