@@ -1,5 +1,6 @@
 import React from 'react';
 import shortid from 'shortid';
+import FilterPanel from './filter-panel.js';
 import ProjectCard from './project-card.js';
 
 const projects = [
@@ -38,7 +39,9 @@ const Projects = () => {
 					projects.map(project => <ProjectCard key={shortid.generate()} project={project} />)
 				}
 			</div>
-			<div className="filters"></div>
+			<div className="filters">
+				<FilterPanel />
+			</div>
 		</div>
 	);
 };
