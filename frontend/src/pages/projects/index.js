@@ -6,32 +6,32 @@ import ProjectCard from './project-card.js';
 const projects = [
 	{
 		name: 'SuperProject1',
-		stacks: ['PM', 'FE', 'Back', 'DB'],
+		categories: ['HTML/CSS', 'React', 'NodeJS', 'NoSQL'],
 		vacancies: ['PM', 'Back'], 
 	},
 	{
 		name: 'SuperProject2',
-		stacks: ['PM', 'Mobile', 'Back', 'UI/UX', 'DB'],
+		categories: ['ReactNative', 'UI/UX', 'SQL'],
 		vacancies: ['UI/UX', 'DB'], 
 	},
 	{
 		name: 'SuperProject3',
-		stacks: ['PM', 'FE', 'Back', 'DB'],
+		categories: ['HTML/CSS', 'React', 'NoSQL'],
 		vacancies: ['FE', 'Back'], 
 	},
 	{
 		name: 'SuperProject3',
-		stacks: ['PM', 'FE', 'Back', 'DB'],
+		categories: ['HTML/CSS', 'React', 'NodeJS'],
 		vacancies: ['FE', 'Back'], 
 	},
 	{
 		name: 'SuperProject3',
-		stacks: ['PM', 'FE', 'Back', 'DB'],
+		categories: ['React', 'NodeJS', 'NoSQL'],
 		vacancies: ['FE', 'Back'], 
 	},
 	{
 		name: 'SuperProject3',
-		stacks: ['PM', 'FE', 'Back', 'DB'],
+		categories: ['HTML/CSS', 'NoSQL'],
 		vacancies: ['FE', 'Back'], 
 	}
 ];
@@ -42,7 +42,7 @@ class Projects extends Component {
 		checkedCategories: []
 	};
 
-	toggleCheckedCategories = (category) => {
+	toggleCheckedCategories = (category, e) => {
 		if (this.state.checkedCategories.includes(category)) {
 			this.setState((prevState) => {
 				const newCategories = prevState.checkedCategories.filter((i, j) => 
@@ -58,25 +58,30 @@ class Projects extends Component {
 	};
 
 	render() {
-		// const sortedProjects = projects.filter((item) => item.categories);
+		const sortedProjects = this.state.checkedCategories.length ? 
+			projects.filter((item) => 
+				this.state.checkedCategories.some(category => 
+					item.categories.includes(category)
+				)
+		) : projects;
 
 		return (
-		<div className= "wrapper-project-page">
-			<div className="main-content">
-				{
-					projects.map(project => <ProjectCard 
-						key={shortid.generate()} 
-						project={project} />)
-				}
+			<div className= "wrapper-project-page">
+				<div className="main-content">
+					{
+						sortedProjects.map(project => <ProjectCard 
+							key={shortid.generate()} 
+							project={project} />)
+					}
+				</div>
+				<div className="filters">
+					<FilterPanel 
+						checkedStacks={this.state.checkedStacks}		
+						checkedCategories={this.state.checkedCategories}
+						toggleCheckedCategories={this.toggleCheckedCategories} />
+				</div>
 			</div>
-			<div className="filters">
-				<FilterPanel 
-					checkedStacks={this.state.checkedStacks}		
-					checkedCategories={this.state.checkedCategories}
-					toggleCheckedCategories={this.toggleCheckedCategories} />
-			</div>
-		</div>
-	);
+		);
 	}
 };
 
