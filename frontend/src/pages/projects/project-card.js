@@ -20,7 +20,7 @@ const ProjectCard = (props) => {
 				</h6>
 			</CardContent>
 			<CardActions>
-				<Button size="small" variant="outlined">Learn More</Button>
+				<Button classes={{root:'button-about-project'}} size="small" variant="outlined">Learn More</Button>
 			</CardActions>
 		</Card>
 	);

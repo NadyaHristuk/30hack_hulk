@@ -2,11 +2,25 @@
     margin: 0;
     padding: 0;
 }
+
+.App .wrapper {
+    position: relative;
+}
+
+.App img{
+    position: absolute;
+    top: 12.5px;
+    left: 30px;
+}
 .App .tabsHeader{
-    width: 100%;
     min-height: 70px;
+    padding-left: 180px;
     background-color: #1a1758;
     color: #fff;
+}
+.App .tabsHeader .logo-image{
+    max-width: 100px;
+    max-height: 45px;
 }
 
 .App .tabsHeader .MuiTabs-flexContainer-2{
@@ -32,6 +46,35 @@
 }
 
 .App .main-content .wrapper-project-card{
-    width: 450px;
+    width: 380px;
     max-width: 50%;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2);
+    
+}
+
+.App .main-content .wrapper-project-card h5{
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #1a1758;
+}
+
+.App .main-content .wrapper-project-card p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.App .main-content .wrapper-project-card h6{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.App .main-content .wrapper-project-card .button-about-project{
+    background-color: #1a1758;
+    color: #fff;
+}
+.App .filters{
+    max-width: 30%;
+    padding: 30px;
 }

@@ -12,8 +12,32 @@ const filters = [
 		categories: [ 'HTML/CSS', 'JS', 'React', 'Vue', 'Angular' ],
 	},
 	{
+		name: 'BACK',
+		categories: [ 'PHP', 'NodeJS', 'Python', '.NET' ],
+	},
+	{
 		name: 'DB',
 		categories: ['SQL', 'NoSQL'],
+	},
+	{
+		name: 'MOBILE',
+		categories: ['Swift', 'ReactNative', 'Android/Java', 'Objective-C'],
+	},
+	{
+		name: 'DESIGN',
+		categories: ['Designer', 'UI/UX'],
+	},
+	{
+		name: 'QA',
+		categories: ['Manual', 'Automation'],
+	},
+	{
+		name: 'PM',
+		categories: ['Project Manager', 'Business Analyst'],
+	},
+	{
+		name: 'OTHER',
+		categories: ['BigData', 'SEO', 'SMM', 'Marketing'],
 	}
 ];
 
