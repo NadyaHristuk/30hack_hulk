@@ -49,11 +49,11 @@ const FilterPanel = (props) => {
 		<div>
 			{
 				filters.map(filter => 
-					<ExpansionPanel key={shortid.generate()} >
+					<ExpansionPanel classes={{root:'filter-wrapper-stack'}} key={shortid.generate()} >
 						<ExpansionPanelSummary>
 							<p>{filter.name}</p>
 						</ExpansionPanelSummary>
-		        		<ExpansionPanelDetails>
+		        		<ExpansionPanelDetails classes={{root:'checkbox-wrapper'}}>
 		        			{
 		        				filter.categories.map(category => 
 		        					<FormControlLabel 

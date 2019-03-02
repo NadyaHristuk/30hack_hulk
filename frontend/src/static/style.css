@@ -41,13 +41,16 @@
     flex-wrap: wrap;
     max-width: 70%;
     width: 70%;
+    height: 100%;
     padding: 30px;
     justify-content: space-between;
 }
 
 .App .main-content .wrapper-project-card{
-    width: 380px;
     max-width: 50%;
+    width: 45%;
+    height: 180px;
+    margin-right: 5%;
     margin-bottom: 30px;
     box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2);
     
@@ -77,4 +80,14 @@
 .App .filters{
     max-width: 30%;
     padding: 30px;
+}
+
+.App .filters .filter-wrapper-stack{
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2);
+}
+
+.App .filters .checkbox-wrapper{
+    flex-direction: column;
 }
