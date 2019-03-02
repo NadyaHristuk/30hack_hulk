@@ -27,12 +27,17 @@ const projects = [
 		name: 'SuperProject3',
 		stacks: ['PM', 'FE', 'Back', 'DB'],
 		vacancies: ['FE', 'Back'], 
+	},
+	{
+		name: 'SuperProject3',
+		stacks: ['PM', 'FE', 'Back', 'DB'],
+		vacancies: ['FE', 'Back'], 
 	}
 ];
 
 const Projects = () => {
 	return (
-		<div>
+		<div className= "wrapper-project-page">
 			<div className="main-content">
 				{
 					projects.map(project => <ProjectCard key={shortid.generate()} project={project} />)

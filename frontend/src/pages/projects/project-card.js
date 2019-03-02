@@ -9,7 +9,7 @@ const ProjectCard = (props) => {
 	const { name, stacks, vacancies } = props.project;
 
 	return (
-		<Card>
+		<Card classes={{root:'wrapper-project-card'}}>
 			<CardContent>
 				<h5>{name}</h5>
 				<p>
