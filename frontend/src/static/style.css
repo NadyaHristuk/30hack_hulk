@@ -2,8 +2,36 @@
     margin: 0;
     padding: 0;
 }
-.tabsHeader{
+.App .tabsHeader{
     width: 100%;
+    min-height: 70px;
     background-color: #1a1758;
     color: #fff;
+}
+
+.App .tabsHeader .MuiTabs-flexContainer-2{
+    min-height: 70px;
+}
+
+.App .tabsHeader .MuiTabs-flexContainer-2 .MuiPrivateTabIndicator-colorSecondary-27 {
+    background-color: #2196f3;
+    height: 3px;
+}
+
+.App .wrapper-project-page{
+    display: flex;
+}
+
+.App .main-content{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 70%;
+    width: 70%;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+.App .main-content .wrapper-project-card{
+    width: 450px;
+    max-width: 50%;
 }
