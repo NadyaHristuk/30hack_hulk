@@ -22,19 +22,31 @@ app.use((req, res, next) => {
             Message: 'It\'s okey',
         })
     }
-
     next();
 });
 
-app.use(express.static(path.join(__dirname,'client/build')));
+app.use(express.static(path.join(__dirname,'frontend/build')));
 
 app.use('/login', loginRouter);
 app.use('/signup', signUpRouter);
-app.use('/projects', checkAuth, projectsRouter);
+app.use('/projects', projectsRouter);
 
 
 app.get('/', function (req, res, next) {
-    res.sendFile(path.join(__dirname,'client/build/index.html'));
+    res.sendFile(path.join(__dirname,'frontend/build/index.html'));
 });
+
+app.use((req, res, next) => {
+    res
+      .status(404)
+      .json({err: '404'});
+  });
+  
+  app.use((err, req, res, next) => {
+    console.log(err.stack);
+    res
+      .status(500)
+      .json({err: '500'});
+  })
 
 module.exports = app;

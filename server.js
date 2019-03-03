@@ -2,7 +2,6 @@ const http = require('http');
 const app = require('./app');
 const {PORT, dbURL} = require('./config/index');
 const mongoose = require('mongoose');
-const db = require('./config/index');
 mongoose.Promise = global.Promise;
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);

@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
-let projectsSchema = require('./projects');
+let projectsSchema = require('./project');
 
 const checkEmail = /.+@{1}.+\.{1}.+/i;
 
@@ -11,8 +11,7 @@ let userSchema = new Schema({
         unique: true,
         match: checkEmail
     },
-    password: {type: String, required: true, unique: true},
-    projects: [projectsSchema]
+    password: {type: String, required: true, unique: true}    
 }, {
     toObject: { virtuals: true},
     toJSON: { virtuals: true}

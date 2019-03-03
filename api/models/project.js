@@ -1,39 +1,41 @@
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
-const moment = require("moment");
 
-let Project = new Schema({
+let projectSchema = new Schema({
+     
      name: {
           type: String,
           required: true
      },
      stacks: {
-          type: Array,
+          type:[String],
           required: true
      },
      description: {
           type: String,
-          required: true
+          
      },
      duration: {
           type: String,
      },
      categories: {
-          type: Array,
-          required: true
+          type: Array
      },
      vacancies: {
-          type: Array,
-          required: true
+          type:[String],
+          
      },
      author: {
           type: String          
      },
      contacts: {
-          type: Array          
+         type:[String]           
      }
 }, {
      versionKey: false
 });
 
+const  Project = mongoose.model('Project', projectSchema);
+
 module.exports = Project;
+
