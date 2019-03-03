@@ -7,12 +7,25 @@
 .App .wrapper {
     position: relative;
 }
-
+.App .main-page-wrapper{
+    position: relative;
+    background-color:  #1a1758;
+    min-height: 70px;
+}
 .App img{
     position: absolute;
     top: 12.5px;
     left: 30px;
 }
+
+.App .main-page-content{
+    display: flex;
+}
+
+.App .main-page-content > div{
+    flex-grow: 1;
+}
+
 .App .tabsHeader{
     min-height: 70px;
     padding-left: 180px;
@@ -45,6 +58,11 @@
     height: 100%;
     padding: 30px;
     justify-content: space-between;
+}
+
+.App .main-content .add-button-wrapper{
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .App .main-content .wrapper-project-card{
