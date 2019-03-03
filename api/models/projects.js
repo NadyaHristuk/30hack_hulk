@@ -2,24 +2,38 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 const moment = require("moment");
 
-let Cost = new Schema({
-     cost: {
-          type: Number,
-          required: true
-     },
-     date: {
-          type: Date,
-          default: moment().valueOf()
-     },
-     category: {
+let Project = new Schema({
+     name: {
           type: String,
           required: true
      },
-     comments: {
+     stacks: {
+          type: Array,
+          required: true
+     },
+     description: {
           type: String,
+          required: true
+     },
+     duration: {
+          type: String,
+     },
+     categories: {
+          type: Array,
+          required: true
+     },
+     vacancies: {
+          type: Array,
+          required: true
+     },
+     author: {
+          type: String          
+     },
+     contacts: {
+          type: Array          
      }
 }, {
      versionKey: false
 });
 
-module.exports = Cost;
+module.exports = Project;
