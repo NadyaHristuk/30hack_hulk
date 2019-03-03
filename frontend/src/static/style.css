@@ -1,12 +1,40 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
-.App .tabsHeader{
-    width: 100%;
+
+.App .wrapper {
+    position: relative;
+}
+.App .main-page-wrapper{
+    position: relative;
+    background-color:  #1a1758;
     min-height: 70px;
+}
+.App img{
+    position: absolute;
+    top: 12.5px;
+    left: 30px;
+}
+
+.App .main-page-content{
+    display: flex;
+}
+
+.App .main-page-content > div{
+    flex-grow: 1;
+}
+
+.App .tabsHeader{
+    min-height: 70px;
+    padding-left: 180px;
     background-color: #1a1758;
     color: #fff;
+}
+.App .tabsHeader .logo-image{
+    max-width: 100px;
+    max-height: 45px;
 }
 
 .App .tabsHeader .MuiTabs-flexContainer-2{
@@ -27,11 +55,68 @@
     flex-wrap: wrap;
     max-width: 70%;
     width: 70%;
+    height: 100%;
     padding: 30px;
     justify-content: space-between;
 }
 
+.App .main-content .add-button-wrapper{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .App .main-content .wrapper-project-card{
-    width: 450px;
     max-width: 50%;
+    width: 45%;
+    height: 180px;
+    margin-right: 5%;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2);
+    
+}
+
+.App .main-content .wrapper-project-card h5{
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #1a1758;
+}
+
+.App .main-content .wrapper-project-card p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.App .main-content .wrapper-project-card p span{
+    margin-right: 5px;
+}
+.App .main-content .wrapper-project-card h6{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.App .main-content .wrapper-project-card h6 span{
+    margin-right: 5px;
+}
+.App .main-content .wrapper-project-card .button-about-project{
+    background-color: #1a1758;
+    color: #fff;
+}
+.App .filters{
+    max-width: 30%;
+    padding: 30px;
+}
+
+.App .filters .filter-wrapper-stack{
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2), 1px 1px 3px 1px rgba(0,0,0,0.2);
+}
+
+.App .filters .checkbox-wrapper{
+    flex-direction: column;
+}
+
+.App .filters .checkbox-wrapper .checkbox-color svg{
+    color: #1a1758;
 }

@@ -16,7 +16,8 @@ class Header extends Component {
         const { value } = this.state;
         return (
 
-        <div className = "headerWrapper">
+        <div className = "wrapper">
+        <img className="logo-image" src={require('../static/images/logo.png')} alt="Halk"/>
         <Tabs classes={{root: 'tabsHeader'}} value={value} onChange={this.handleChange}>
             <Tab label="Проекты" />
             <Tab label="Вопросы и ответы" />
@@ -25,7 +26,8 @@ class Header extends Component {
             {value === 0 && <Projects />}
             {value === 1 && <h1>Item Two</h1>}
             {value === 2 && <h1>Item Three</h1>}
-            </div>
+            
+        </div>
 
         );
     }

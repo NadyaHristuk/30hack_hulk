@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import shortid from 'shortid';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -12,39 +12,72 @@ const filters = [
 		categories: [ 'HTML/CSS', 'JS', 'React', 'Vue', 'Angular' ],
 	},
 	{
+		name: 'BACK',
+		categories: [ 'PHP', 'NodeJS', 'Python', '.NET' ],
+	},
+	{
 		name: 'DB',
 		categories: ['SQL', 'NoSQL'],
+	},
+	{
+		name: 'MOBILE',
+		categories: ['Swift', 'ReactNative', 'Android/Java', 'Objective-C'],
+	},
+	{
+		name: 'DESIGN',
+		categories: ['Designer', 'UI/UX'],
+	},
+	{
+		name: 'QA',
+		categories: ['Manual', 'Automation'],
+	},
+	{
+		name: 'PM',
+		categories: ['Project Manager', 'Business Analyst'],
+	},
+	{
+		name: 'OTHER',
+		categories: ['BigData', 'SEO', 'SMM', 'Marketing'],
 	}
 ];
 
 
-export default class FilterPanel extends Component {
-	render() {
-		return (
-			<div>
-				{
-					filters.map(filter => 
-						<ExpansionPanel key={shortid.generate()} >
-							<ExpansionPanelSummary>
-								<p>{filter.name}</p>
-							</ExpansionPanelSummary>
-			        		<ExpansionPanelDetails>
-			        			{
-			        				filter.categories.map(category => 
-			        					<FormControlLabel 
-			        						key={shortid.generate()}
-			        						control={
-			        							<Checkbox  />	
-			        						}
-			        						label={category} 
-		        						/>
-			        				)
-			        			}
-			        		</ExpansionPanelDetails>
-		  				</ExpansionPanel>
-					)
-				}
-			</div>
-		);
-	}
+const FilterPanel = (props) => {
+	const { checkedCategories, toggleCheckedCategories } = props;
+
+	return (
+		<div>
+			{
+				filters.map(filter => 
+					<ExpansionPanel classes={{root:'filter-wrapper-stack'}} key={shortid.generate()} >
+						<ExpansionPanelSummary>
+							<p>{filter.name}</p>
+						</ExpansionPanelSummary>
+		        		<ExpansionPanelDetails classes={{root:'checkbox-wrapper'}}>
+		        			{
+		        				filter.categories.map(category => 
+		        					<FormControlLabel 
+		        						key={shortid.generate()}
+		        						control={
+		        							<Checkbox  classes={{root:'checkbox-color'}}
+		        								checked={checkedCategories.includes(category)}
+		        								onChange={(e) => {
+		        									e.stopPropagation();
+		        									toggleCheckedCategories(category, e);
+		        								}}
+		        								value={category}
+		        							/>	
+		        						}
+		        						label={category} 
+	        						/>
+		        				)
+		        			}
+		        		</ExpansionPanelDetails>
+	  				</ExpansionPanel>
+				)
+			}
+		</div>
+	);
 }
+
+export default FilterPanel;
