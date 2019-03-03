@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js ",
+    "develop": "nodemon --inspect server",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "author": "Bootcamp-5",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bcrypt": "^2.0.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.1.7",
+    "react-tooltip": "^3.6.1"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "stylelint": "^9.4.0"
+  }
+}
