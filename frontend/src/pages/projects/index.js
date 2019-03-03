@@ -4,7 +4,7 @@ import FilterPanel from './filter-panel.js';
 import ProjectCard from './project-card.js';
 import AddProjectButton from './add-project-button';
 
-const projects = [
+var  projects = [
 	{
 		name: 'SuperProject1',
 		id: 1,
@@ -74,6 +74,7 @@ const projects = [
 ];
 
 class Projects extends Component {
+	elem = {}
 	state = {
 		checkedStacks: [],
 		checkedCategories: []
@@ -93,8 +94,35 @@ class Projects extends Component {
 			});
 		}
 	};
-
+	componentDidMount() {
+		console.log();
+		fetch("http://localhost:3001",{
+			method: 'get'
+		})
+		  .then(res => res.json())
+		  .then(
+			(result) => {
+			  this.setState({
+				isLoaded: true,
+				items: result.items
+			  });
+			},
+			// Note: it's important to handle errors here
+			// instead of a catch() block so that we don't swallow
+			// exceptions from actual bugs in components.
+			(error) => {
+			  this.setState({
+				isLoaded: true,
+				error
+			  });
+			}
+		  )
+	  }
+	elem =  this.componentDidMount()
 	render() {
+		console.log('render')
+		var c = 'fdsfs';
+		
 		const sortedProjects = this.state.checkedCategories.length ? 
 			projects.filter((item) => 
 				this.state.checkedCategories.some(category => 
