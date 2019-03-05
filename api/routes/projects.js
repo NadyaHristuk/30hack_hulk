@@ -6,14 +6,14 @@ const Projects = require("../models/project");
 const jwt = require("jsonwebtoken");
 
 router.post("/", (req, res, next) => {
-  const Project = new Projects({    
+  const Project = new Projects({ 
     name: req.body.name,
     stacks: req.body.stacks,
     description: req.body.description,
     duration: req.body.duration,
-    categories: req.body.categories,
-    vacancies: req.body.vacancies,
-    author: req.body.author,
+    // categories: req.body.categories,
+    // vacancies: req.body.vacancies,
+    // author: req.body.author,
     contacts: req.body.contacts
   });
   Project.save()
@@ -32,6 +32,7 @@ router.post("/", (req, res, next) => {
 });
 
 router.get("/", (req, res, next) => {
+  console.log(req.body)
   Projects.find()
   .then(projects => {
     res.status(200).json({
